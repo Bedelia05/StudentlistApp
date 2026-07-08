@@ -112,10 +112,10 @@ app.get('/editStudent/:id', (req, res) => {
 app.post('/editStudent/:id', (req, res) => {
     const studentId = req.params.id;
     // Extract student data from the request body
-    const { name, dob, contact, image } = req.body;
-    const sql = 'UPDATE student SET name = ? , dob = ?, contact = ?, image = ? WHERE studentId = ?';
+    const { name, dob, contact} = req.body;
+    const sql = 'UPDATE student SET name = ? , dob = ?, contact = ? WHERE studentId = ?';
     // Insert the new student into the database
-    connection.query(sql, [name, dob, contact, image, studentId], (error, results) => {
+    connection.query(sql, [name, dob, contact, studentId], (error, results) => {
         if (error) {
             // Handle any error that occurs during the database operation
             console.error("Error updating student:", error);
