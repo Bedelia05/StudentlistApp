@@ -49,7 +49,7 @@
             <td><a href="/student/<%= student[i].studentId %>">
                 <%= student[i].name %>
               </a></td>
-            <td><img src="<%= student[i].image %>" width="80"></td>
+            <td><img src="images/<%= student[i].image %>" width="80"></td>
             <td>
               <%= new Date(student[i].dob).toLocaleDateString('en-US', { month: 'long' , day: '2-digit' ,
                 year: 'numeric' }) %>
